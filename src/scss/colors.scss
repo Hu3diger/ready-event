@@ -1,0 +1,43 @@
+// Gray scales
+$white: 		#fff !default;
+$gray-100: 		#f6f7f8 !default;
+$gray-200: 		#e9ecef !default;
+$gray-300: 		#dee2e6 !default;
+$gray-400: 		#ced4da !default;
+$gray-500: 		#adb5bd !default;
+$gray-600: 		#868e96 !default;
+$gray-700: 		#495057 !default;
+$gray-800: 		#373a3c !default;
+$gray-900: 		#212529 !default;
+$black: 		#000 !default;
+
+// WEG Colors
+$weg-blue-000: 	#001323 !default;
+$weg-blue-600: 	#023a67 !default;
+$weg-blue-500: 	#00579d !default;
+$weg-blue-400: 	#2382ba !default;
+$weg-blue-300: 	#0091bd !default;
+$weg-blue-200: 	#64c3d5 !default;
+$weg-blue-100: 	#d5edfa !default;
+$lighter: 		#f7f8fa !default;
+
+// App defautl theme
+$blue:    		#2196F3 !default;
+$indigo:  		#6610f2 !default;
+$purple:  		#6f42c1 !default;
+$pink:    		#e83e8c !default;
+$red:     		#e51c23 !default;
+$orange:  		#fd7e14 !default;
+$yellow:  		#ff9800 !default;
+$green:   		#4CAF50 !default;
+$teal:    		#20c997 !default;
+$cyan:    		#9C27B0 !default;
+
+$primary:       $weg-blue-300 !default;
+$secondary:     $gray-300 !default;
+$success:       $green !default;
+$info:          $blue !default;
+$warning:       $yellow !default;
+$danger:        $red !default;
+$light:         $white !default;
+$dark:          $gray-800 !default;
