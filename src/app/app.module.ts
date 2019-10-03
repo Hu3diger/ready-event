@@ -3,7 +3,7 @@ import { NgModule } from '@angular/core';
 import { AppRoutingModule } from './app.routing';
 import { AppComponent } from './app.component';
 import { HomeComponent } from './pages/home/home.component';
-import { AboutComponent } from './pages/about/about.component';
+import { InformationsComponent } from './pages/informations/informations.component';
 import { NavbarComponent } from './components/navbar/navbar.component';
 import { FooterComponent } from './components/footer/footer.component';
 
@@ -11,7 +11,7 @@ import { FooterComponent } from './components/footer/footer.component';
   declarations: [
     AppComponent,
     HomeComponent,
-    AboutComponent,
+    InformationsComponent,
     NavbarComponent,
     FooterComponent
   ],
