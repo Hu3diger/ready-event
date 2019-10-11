@@ -2,27 +2,121 @@
   <div class="row mt-5">
     <div class="col-12 d-flex justify-content-center">
       <div class="btn-group" role="group" aria-label="Basic example">
-        <button type="button" class="btn btn-secondary mr-3">
-          <i class="fa fa-home" aria-hidden="true"></i>
-          General Informations
+        <button type="button" class="btn btn-secondary mr-3" (click)="type = infoType.GENERAL">
+          <i class="fa fa-home" aria-hidden="true"></i> General Informations
         </button>
-        <button type="button" class="btn btn-secondary mr-3">
-          <i class="fa fa-map" aria-hidden="true"></i>
-          Location
+        <button type="button" class="btn btn-secondary mr-3" (click)="type = infoType.LOCATION">
+          <i class="fa fa-map" aria-hidden="true"></i> Location
         </button>
-        <button type="button" class="btn btn-secondary mr-3">
-          <i class="fa fa-money" aria-hidden="true"></i>
-          Rewards
+        <button type="button" class="btn btn-secondary mr-3" (click)="type = infoType.REWARDS">
+          <i class="fa fa-money" aria-hidden="true"></i> Rewards
         </button>
-        <button type="button" class="btn btn-secondary mr-3">
-          <i class="fa fa-bed" aria-hidden="true"></i>
-          Hotels
+        <button type="button" class="btn btn-secondary mr-3" (click)="type = infoType.HOTEL">
+          <i class="fa fa-bed" aria-hidden="true"></i> Hotels
         </button>
-        <button type="button" class="btn btn-secondary mr-3">
-          <i class="fa fa-usd" aria-hidden="true"></i>
-          Ticket price
+        <button type="button" class="btn btn-secondary mr-3" (click)="type = infoType.TICKET">
+          <i class="fa fa-usd" aria-hidden="true"></i> Ticket price
         </button>
       </div>
     </div>
   </div>
+  <ng-container *ngIf="type === infoType.GENERAL">
+    <div class="row mt-5">
+      <div class="col-12 d-flex justify-content-center">
+        <img class="image" src="../../../assets/images/agenda.png">
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-12">
+        <p class="font-weight-bold">Agenda</p>
+        <p>
+          Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore
+          magna aliqua. Donec adipiscing tristique risus nec. Ac tincidunt vitae semper quis. Pulvinar sapien et ligula
+          ullamcorper malesuada proin. Sed id semper risus in. Mi in nulla posuere sollicitudin aliquam ultrices
+          sagittis. Id ornare arcu odio ut sem nulla pharetra diam. Non quam lacus suspendisse faucibus. Condimentum
+          lacinia quis vel eros donec ac odio tempor orci. Vestibulum lectus mauris ultrices eros.
+        </p>
+      </div>
+    </div>
+  </ng-container>
+
+  <ng-container *ngIf="type === infoType.LOCATION">
+    <div class="row mt-5">
+      <div class="col-12 d-flex justify-content-center">
+        <img class="image" src="../../../assets/images/location.png">
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-12">
+        <p class="font-weight-bold">Location</p>
+        <p>
+          Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore
+          magna aliqua. Donec adipiscing tristique risus nec. Ac tincidunt vitae semper quis. Pulvinar sapien et ligula
+          ullamcorper malesuada proin. Sed id semper risus in. Mi in nulla posuere sollicitudin aliquam ultrices
+          sagittis. Id ornare arcu odio ut sem nulla pharetra diam. Non quam lacus suspendisse faucibus. Condimentum
+          lacinia quis vel eros donec ac odio tempor orci. Vestibulum lectus mauris ultrices eros.
+        </p>
+      </div>
+    </div>
+  </ng-container>
+
+  <ng-container *ngIf="type === infoType.REWARDS">
+    <div class="row mt-5">
+      <div class="col-12 d-flex justify-content-center">
+        <img class="image" src="../../../assets/images/trophy.png">
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-12">
+        <p class="font-weight-bold">Rewards</p>
+        <p>
+          Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore
+          magna aliqua. Donec adipiscing tristique risus nec. Ac tincidunt vitae semper quis. Pulvinar sapien et ligula
+          ullamcorper malesuada proin. Sed id semper risus in. Mi in nulla posuere sollicitudin aliquam ultrices
+          sagittis. Id ornare arcu odio ut sem nulla pharetra diam. Non quam lacus suspendisse faucibus. Condimentum
+          lacinia quis vel eros donec ac odio tempor orci. Vestibulum lectus mauris ultrices eros.
+        </p>
+      </div>
+    </div>
+  </ng-container>
+
+  <ng-container *ngIf="type === infoType.HOTEL">
+    <div class="row mt-5">
+      <div class="col-12 d-flex justify-content-center">
+        <img class="image" src="../../../assets/images/hotel.png">
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-12">
+        <p class="font-weight-bold">Hotels</p>
+        <p>
+          Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore
+          magna aliqua. Donec adipiscing tristique risus nec. Ac tincidunt vitae semper quis. Pulvinar sapien et ligula
+          ullamcorper malesuada proin. Sed id semper risus in. Mi in nulla posuere sollicitudin aliquam ultrices
+          sagittis. Id ornare arcu odio ut sem nulla pharetra diam. Non quam lacus suspendisse faucibus. Condimentum
+          lacinia quis vel eros donec ac odio tempor orci. Vestibulum lectus mauris ultrices eros.
+        </p>
+      </div>
+    </div>
+  </ng-container>
+
+  <ng-container *ngIf="type === infoType.TICKET">
+    <div class="row mt-5">
+      <div class="col-12 d-flex justify-content-center">
+        <img class="image" src="../../../assets/images/dolar.png">
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-12">
+        <p class="font-weight-bold">Ticket price</p>
+        <p>
+          Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore
+          magna aliqua. Donec adipiscing tristique risus nec. Ac tincidunt vitae semper quis. Pulvinar sapien et ligula
+          ullamcorper malesuada proin. Sed id semper risus in. Mi in nulla posuere sollicitudin aliquam ultrices
+          sagittis. Id ornare arcu odio ut sem nulla pharetra diam. Non quam lacus suspendisse faucibus. Condimentum
+          lacinia quis vel eros donec ac odio tempor orci. Vestibulum lectus mauris ultrices eros.
+        </p>
+      </div>
+    </div>
+  </ng-container>
 </div>
