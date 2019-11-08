@@ -7,6 +7,7 @@ import { InformationsComponent } from './pages/informations/informations.compone
 import { NavbarComponent } from './components/navbar/navbar.component';
 import { FooterComponent } from './components/footer/footer.component';
 import { LoginComponent } from './pages/authentication/login/login.component';
+import { CategoriesComponent } from './pages/categories/categories.component';
 
 @NgModule({
   declarations: [
@@ -15,6 +16,7 @@ import { LoginComponent } from './pages/authentication/login/login.component';
     LoginComponent,
     FooterComponent,
     NavbarComponent,
+    CategoriesComponent,
     InformationsComponent
   ],
   imports: [
