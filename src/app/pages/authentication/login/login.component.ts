@@ -1,4 +1,5 @@
 import { Component, OnInit } from "@angular/core";
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-login-page',
@@ -7,7 +8,9 @@ import { Component, OnInit } from "@angular/core";
 export class LoginComponent{
   loading: boolean;
 
-  constructor(){
+  constructor(
+    private router: Router
+  ){
     this.loading = false;
   }
 
@@ -15,6 +18,7 @@ export class LoginComponent{
     this.loading = true;
     setTimeout(() => {
       this.loading = false
+      this.router.navigate(['/main']);
     }, 1000);
   }
 }

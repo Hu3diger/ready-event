@@ -5,6 +5,7 @@ import { InformationsComponent } from './pages/informations/informations.compone
 import { LoginComponent } from './pages/authentication/login/login.component';
 import { CategoriesComponent } from './pages/categories/categories.component';
 import { RegisterComponent } from './pages/authentication/register/register.component';
+import { MainComponent } from './pages/main/main.component';
 
 
 const routes: Routes = [
@@ -27,6 +28,10 @@ const routes: Routes = [
   {
     path: 'register',
     component: RegisterComponent
+  },
+  {
+    path: 'main',
+    component: MainComponent
   },
   {
     path: '**',

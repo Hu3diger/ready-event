@@ -11,11 +11,13 @@ import { LoginComponent } from './pages/authentication/login/login.component';
 import { CategoriesComponent } from './pages/categories/categories.component';
 import { RegisterComponent } from './pages/authentication/register/register.component';
 import { readyUtils } from './utils/utils';
+import { MainComponent } from './pages/main/main.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     HomeComponent,
+    MainComponent,
     LoginComponent,
     FooterComponent,
     NavbarComponent,
