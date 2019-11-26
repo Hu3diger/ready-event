@@ -1,5 +1,7 @@
 import { Component } from "@angular/core";
 import { readyUtils } from 'src/app/utils/utils';
+import { User } from 'src/app/model/User';
+import { LoginService } from 'src/app/services/login.service';
 
 @Component({
   selector: 'app-register-page',
@@ -7,7 +9,7 @@ import { readyUtils } from 'src/app/utils/utils';
 })
 export class RegisterComponent {
   loading: boolean;
-
+  user: User;
   model = {
     username: null as string,
     email: null as string,
@@ -20,15 +22,22 @@ export class RegisterComponent {
     email: false as boolean
   }
 
-  constructor(private utils: readyUtils) {
+  constructor(
+    private utils: readyUtils,
+    private loginService: LoginService
+  ) {
     this.loading = false;
+    this.user = new User();
   }
 
   register() {
     this.clearErrors();
     this.loading = true;
     if (this.checkForm() && this.checkPass()) {
-      alert('opa, tudo certo');
+      this.user.email = this.model.email;
+      this.user.username = this.model.username;
+      let teste = this.loginService.register(this.user, this.model.password);
+      console.log(teste);
     }
   }
 
@@ -56,6 +65,5 @@ export class RegisterComponent {
     for (let error in this.errors) {
       this.errors[error] = false;
     }
-    console.log(this.errors);
   }
 }

@@ -15,6 +15,8 @@ import { LoginComponent } from "./pages/authentication/login/login.component";
 import { MainComponent } from "./pages/main/main.component";
 import { HomeComponent } from "./pages/home/home.component";
 import { readyUtils } from "./utils/utils";
+import { LoginService } from './services/login.service';
+import { GraphQlService } from './services/graphql.service';
 
 @NgModule({
   declarations: [
@@ -36,7 +38,11 @@ import { readyUtils } from "./utils/utils";
     HttpLinkModule,
     HttpClientModule
   ],
-  providers: [readyUtils],
+  providers: [
+    readyUtils,
+    LoginService,
+    GraphQlService
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule {}
