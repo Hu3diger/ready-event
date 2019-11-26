@@ -1,24 +1,29 @@
 import { Component, OnInit } from "@angular/core";
-import { Router } from '@angular/router';
+import { Router } from "@angular/router";
 
 @Component({
-  selector: 'app-login-page',
-  templateUrl: './login.component.html'
+  selector: "app-login-page",
+  templateUrl: "./login.component.html"
 })
-export class LoginComponent{
+export class LoginComponent {
   loading: boolean;
 
-  constructor(
-    private router: Router
-  ){
+  username: string;
+  password: string;
+
+  constructor(private router: Router) {
     this.loading = false;
   }
 
-  login(){
+  login() {
     this.loading = true;
+
+    console.log(this.username);
+    console.log(this.password);
+
     setTimeout(() => {
-      this.loading = false
-      this.router.navigate(['/main']);
-    }, 1000);
+      this.loading = false;
+      this.router.navigate(["/main"]);
+    }, 400);
   }
 }
