@@ -12,6 +12,9 @@ import { CategoriesComponent } from './pages/categories/categories.component';
 import { RegisterComponent } from './pages/authentication/register/register.component';
 import { readyUtils } from './utils/utils';
 import { MainComponent } from './pages/main/main.component';
+import { ApolloModule } from 'apollo-angular';
+import { HttpLinkModule } from 'apollo-angular-link-http';
+import { HttpClientModule } from '@angular/common/http';
 
 @NgModule({
   declarations: [
@@ -28,7 +31,10 @@ import { MainComponent } from './pages/main/main.component';
   imports: [
     FormsModule,
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    ApolloModule,
+    HttpLinkModule,
+    HttpClientModule
   ],
   providers: [readyUtils],
   bootstrap: [AppComponent]
