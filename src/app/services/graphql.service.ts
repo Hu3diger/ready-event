@@ -5,12 +5,11 @@ import { InMemoryCache } from 'apollo-cache-inmemory';
 import { AppInjector } from '../app.injector';
 
 export class GraphQlService{
-  public apollo: Apollo;
-  public httpLink: HttpLink;
+  apollo: Apollo;
+  httpLink: HttpLink;
 
   constructor(){
     const injector = AppInjector.getInjector();
-    console.log(injector);
     this.apollo = injector.get(Apollo);
     this.httpLink = injector.get(HttpLink);
     this.apollo.create({

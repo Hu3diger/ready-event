@@ -4,10 +4,10 @@ export class AppInjector {
 	private static injector: Injector;
 
 	static setInjector(injector: Injector) {
-		AppInjector.injector = injector;
+		this.injector = injector;
 	}
 
 	static getInjector(): Injector {
-		return AppInjector.injector;
+		return this.injector;
 	}
 }

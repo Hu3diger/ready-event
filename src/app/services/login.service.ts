@@ -9,23 +9,34 @@ export class LoginService extends GraphQlService{
     super();
   }
 
-  login() {}
+  login(username: String, passwd: String) {
+    this.apollo.mutate({
+      mutation: gql`mutation($uname: String!, $passwd: String!){
+        signin(username: $uname, password: $passwd){
+          token
+        }
+      }
+      `,
+      variables: {uname: username, passwd: passwd}
+    }).subscribe(result => {
+      let token = result.data;
+      console.log(token);
+      return true;
+    })
+  }
 
   logout() {}
 
   register(user: User, psw: string) {
     let returnUser;
     this.apollo.mutate({
-      mutation: gql`mutation{
-        signup(email: user.email, username: user.username, password: psw){
-          user{
-            email
-            username
-          }
+      mutation: gql`mutation($email: String!, $uname: String!, $passwd: String!){
+        signup(email: $email, username: $uname, password: $passwd){
+          token
         }
       }
       `,
-      variables: {user, psw}
+      variables: {email: user.email, uname: user.username, passwd: psw}
     }).subscribe(result => {
       returnUser = result.data as User;
     })
