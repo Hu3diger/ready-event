@@ -15,12 +15,12 @@ export class RegisterComponent {
     email: null as string,
     password: null as string,
     cpassword: null as string
-  }
+  };
 
   errors = {
     pass: false as boolean,
     email: false as boolean
-  }
+  };
 
   constructor(
     private utils: readyUtils,
@@ -46,9 +46,9 @@ export class RegisterComponent {
     if ((this.model.password == this.model.cpassword) &&
       !this.utils.isNull(this.model.cpassword) &&
       !this.utils.isNull(this.model.password)) {
-      return true
+      return true;
     } else {
-      this.errors.pass = true
+      this.errors.pass = true;
       return false;
     }
   }

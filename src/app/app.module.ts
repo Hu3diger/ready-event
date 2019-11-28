@@ -19,6 +19,7 @@ import { LoginService } from './services/login.service';
 import { GraphQlService } from './services/graphql.service';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { ToastrModule, ToastContainerModule } from 'ngx-toastr';
+import { RouteGuard } from './guards/readonly.guard';
 
 @NgModule({
   declarations: [
@@ -47,7 +48,8 @@ import { ToastrModule, ToastContainerModule } from 'ngx-toastr';
   providers: [
     readyUtils,
     LoginService,
-    GraphQlService
+    GraphQlService,
+    RouteGuard
   ],
   bootstrap: [AppComponent]
 })

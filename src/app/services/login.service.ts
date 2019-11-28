@@ -10,8 +10,7 @@ export class LoginService extends GraphQlService{
   }
 
   login(username: String, passwd: String) {
-    return new Promise((resolve) => {
-      this.apollo.mutate({
+    return this.apollo.mutate({
         mutation: gql`mutation($uname: String!, $passwd: String!){
           signin(username: $uname, password: $passwd){
             token
@@ -22,17 +21,18 @@ export class LoginService extends GraphQlService{
         }
         `,
         variables: {uname: username, passwd: passwd}
-      }).subscribe(result => {
-        resolve(result.data);
-      })
-    })
+      }).toPromise();
   }
 
-  logout() {}
+  logout() {
+    return new Promise(resolve => {
+      localStorage.removeItem('authToken');
+      resolve(true);
+    });
+  }
 
   register(user: User, psw: string) {
-    return new Promise(resolve => {
-      this.apollo.mutate({
+    return this.apollo.mutate({
         mutation: gql`mutation($email: String!, $uname: String!, $passwd: String!){
           signup(email: $email, username: $uname, password: $passwd){
             token
@@ -40,9 +40,6 @@ export class LoginService extends GraphQlService{
         }
         `,
         variables: {email: user.email, uname: user.username, passwd: psw}
-      }).subscribe(result => {
-        resolve(result.data as User);
-      })
-    })
+      }).toPromise();
   }
 }

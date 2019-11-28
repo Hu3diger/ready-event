@@ -6,6 +6,7 @@ import { LoginComponent } from './pages/authentication/login/login.component';
 import { CategoriesComponent } from './pages/categories/categories.component';
 import { RegisterComponent } from './pages/authentication/register/register.component';
 import { MainComponent } from './pages/main/main.component';
+import { RouteGuard } from './guards/readonly.guard';
 
 
 const routes: Routes = [
@@ -31,8 +32,15 @@ const routes: Routes = [
   },
   {
     path: 'main',
+    canActivate: [RouteGuard],
     component: MainComponent
   },
+  {
+		path: '',
+		redirectTo: '/home',
+		pathMatch: 'full',
+
+	},
   {
     path: '**',
     redirectTo: 'home',

@@ -1,5 +1,6 @@
 import { Component, ViewChild } from '@angular/core';
 import { ToastContainerDirective, ToastrService } from 'ngx-toastr';
+import { LoginService } from './services/login.service';
 
 @Component({
   selector: 'app-root',
@@ -15,7 +16,9 @@ export class AppComponent {
 
   @ViewChild(ToastContainerDirective, null) toastContainer: ToastContainerDirective;
 
-  constructor(private toastrService: ToastrService) {}
+  constructor(
+    private toastrService: ToastrService
+  ) {}
   ngOnInit() {
     this.toastrService.overlayContainer = this.toastContainer;
   }
