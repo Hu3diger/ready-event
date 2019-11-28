@@ -36,8 +36,9 @@ export class RegisterComponent {
     if (this.checkForm() && this.checkPass()) {
       this.user.email = this.model.email;
       this.user.username = this.model.username;
-      let teste = this.loginService.register(this.user, this.model.password);
-      console.log(teste);
+      this.loginService.register(this.user, this.model.password).then(result => {
+        console.log(result);
+      });
     }
   }
 

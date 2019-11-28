@@ -17,6 +17,8 @@ import { HomeComponent } from "./pages/home/home.component";
 import { readyUtils } from "./utils/utils";
 import { LoginService } from './services/login.service';
 import { GraphQlService } from './services/graphql.service';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { ToastrModule, ToastContainerModule } from 'ngx-toastr';
 
 @NgModule({
   declarations: [
@@ -36,7 +38,11 @@ import { GraphQlService } from './services/graphql.service';
     AppRoutingModule,
     ApolloModule,
     HttpLinkModule,
-    HttpClientModule
+    HttpClientModule,
+    BrowserAnimationsModule,
+    ToastrModule.forRoot({
+      positionClass: 'toast-bottom-right',
+    })
   ],
   providers: [
     readyUtils,
