@@ -20,6 +20,7 @@ import { GraphQlService } from './services/graphql.service';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { ToastrModule, ToastContainerModule } from 'ngx-toastr';
 import { RouteGuard } from './guards/readonly.guard';
+import { TeamService } from './services/team.service';
 
 @NgModule({
   declarations: [
@@ -48,6 +49,7 @@ import { RouteGuard } from './guards/readonly.guard';
   providers: [
     readyUtils,
     LoginService,
+    TeamService,
     GraphQlService,
     RouteGuard
   ],

@@ -14,6 +14,9 @@
       <li class="nav-item" [routerLinkActive]="['active']">
         <a class="nav-link" [routerLink]="['/categories']">Categories</a>
       </li>
+      <li class="nav-item" *ngIf="isLogged" [routerLinkActive]="['active']">
+        <a class="nav-link" [routerLink]="['/main']">Dashboard</a>
+      </li>
     </ul>
     <button [routerLinkActive]="['d-none']" *ngIf="!isLogged" class="btn btn-primary my-2 my-sm-0" type="button" [routerLink]="['/login']">
       <i class="fa fa-sign-in" aria-hidden="true"></i>
