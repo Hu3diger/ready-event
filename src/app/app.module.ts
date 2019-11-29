@@ -16,11 +16,11 @@ import { MainComponent } from "./pages/main/main.component";
 import { HomeComponent } from "./pages/home/home.component";
 import { readyUtils } from "./utils/utils";
 import { LoginService } from './services/login.service';
-import { GraphQlService } from './services/graphql.service';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { ToastrModule, ToastContainerModule } from 'ngx-toastr';
 import { RouteGuard } from './guards/readonly.guard';
 import { TeamService } from './services/team.service';
+import { GraphQLModule } from './GraphQl.module';
 
 @NgModule({
   declarations: [
@@ -38,6 +38,7 @@ import { TeamService } from './services/team.service';
     FormsModule,
     BrowserModule,
     AppRoutingModule,
+    GraphQLModule,
     ApolloModule,
     HttpLinkModule,
     HttpClientModule,
@@ -50,7 +51,6 @@ import { TeamService } from './services/team.service';
     readyUtils,
     LoginService,
     TeamService,
-    GraphQlService,
     RouteGuard
   ],
   bootstrap: [AppComponent]

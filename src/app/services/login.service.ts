@@ -1,13 +1,13 @@
 import { Injectable } from "@angular/core";
 import { User } from '../model/User';
-import { GraphQlService } from './graphql.service';
 import gql from 'graphql-tag';
+import { Apollo } from 'apollo-angular';
 
 @Injectable()
-export class LoginService extends GraphQlService{
-  constructor() {
-    super();
-  }
+export class LoginService {
+  constructor(
+    private apollo: Apollo
+  ) { }
 
   login(username: String, passwd: String) {
     return this.apollo.mutate({

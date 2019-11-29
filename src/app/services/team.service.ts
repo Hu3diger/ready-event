@@ -1,22 +1,19 @@
 import { Injectable } from "@angular/core";
-import { GraphQlService } from './graphql.service';
 import gql from 'graphql-tag';
 import { Team } from '../model/Team';
+import { Apollo } from 'apollo-angular';
 
 @Injectable()
-export class TeamService extends GraphQlService{
-  constructor() {
-    super();
-  }
+export class TeamService {
+  constructor(
+    private apollo: Apollo,
+  ) { }
 
   createTeam(team: Team){
     return this.apollo.mutate({
       mutation: gql`mutation($institution: String!, $name: String!, $slug: String!, $website: String!){
-        signin(institution: $institution, name: $name, slug: $slug, website: $website){
+        createTeam(institution: $institution, name: $name, slug: $slug, website: $website){
           name
-          captain{
-            username
-          }
         }
       }
       `,
