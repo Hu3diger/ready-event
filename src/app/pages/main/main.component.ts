@@ -9,8 +9,11 @@ import { Team } from 'src/app/model/Team';
 })
 
 export class MainComponent {
-
   team: Team;
+  result: any;
+  id: any;
+  name: String;
+
   constructor(
     private teamService: TeamService,
     private toastr: ToastrService
@@ -26,5 +29,39 @@ export class MainComponent {
     this.teamService.createTeam(this.team).then(result => {
       console.log(result.data)
     });
+  }
+
+  findAll(){
+    this.teamService.findAll().then(result => {
+      this.result = result.data;
+      console.log(this.result);
+    })
+  }
+
+  findById(){
+    if(this.id){
+      this.teamService.findById(this.id).then(result => {
+        console.log(result.data);
+        this.result = result.data;
+      })
+    }
+  }
+
+  findByNameMatch(){
+    if(this.name){
+      this.teamService.findByNameMatch(this.name).then(result => {
+        console.log(result.data);
+        this.result = result.data;
+      })
+    }
+  }
+
+  findByNameEquals(){
+    if(this.name){
+      this.teamService.findByNameEquals(this.name).then(result => {
+        console.log(result.data);
+        this.result = result.data;
+      })
+    }
   }
 }
