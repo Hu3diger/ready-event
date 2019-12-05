@@ -1,27 +1,91 @@
-<div class="container">
-  <div class="row mt-5 d-flex align-items-center align-content-center">
-    <div class="col-6">
-      <div class="card">
-        <div class="card-header d-flex align-items-center justify-content-between">
-          Team
+<div class="container" style="height: calc(100vh - 56px);">
+  <div class="row d-flex flex-wrap align-items-center align-content-center" style="height: 100%;">
 
-          <button class="btn btn-sm btn-outline-info" (click)="create()">Add</button>
+
+    <ul class="list-group col-8 h-50">
+      <li class="d-flex list-group-item list-group-item-action">ID: Name</li>
+      <li class="d-flex list-group-item list-group-item-action">ID: Name</li>
+      <li class="d-flex list-group-item list-group-item-action">ID: Name</li>
+      <li class="d-flex list-group-item list-group-item-action">ID: Name</li>
+      <li class="d-flex list-group-item list-group-item-action">ID: Name</li>
+      <li class="d-flex list-group-item list-group-item-action">ID: Name</li>
+      <li class="d-flex list-group-item list-group-item-action">ID: Name</li>
+      <li class="d-flex list-group-item list-group-item-action">ID: Name</li>
+      <li class="d-flex list-group-item list-group-item-action">ID: Name</li>
+      <li class="d-flex list-group-item list-group-item-action">ID: Name</li>
+      <li class="d-flex list-group-item list-group-item-action">ID: Name</li>
+      <li class="d-flex list-group-item list-group-item-action">ID: Name</li>
+      <li class="d-flex list-group-item list-group-item-action">ID: Name</li>
+      <li class="d-flex list-group-item list-group-item-action">ID: Name</li>
+      <li class="d-flex list-group-item list-group-item-action">ID: Name</li>
+      <li class="d-flex list-group-item list-group-item-action">ID: Name</li>
+      <li class="d-flex list-group-item list-group-item-action">ID: Name</li>
+      <li class="d-flex list-group-item list-group-item-action">ID: Name</li>
+      <li class="d-flex list-group-item list-group-item-action">ID: Name</li>
+      <li class="d-flex list-group-item list-group-item-action">ID: Name</li>
+    </ul>
+
+    <div class="col-4 h-50">
+      <div class="card h-100">
+        <div class="card-header d-flex align-items-center justify-content-between">
+          <h5 class="m-0">
+            ID: Team Name
+          </h5>
+
+          <a href="https://www.google.com">Website</a>
         </div>
 
-        <div class="card-body"></div>
-      </div>
-    </div>
+        <div class="card-body">
+          <div class="col-12 px-0 py-1">
+            <h6 class="m-0">
+              Slug:
+            </h6>
+          </div>
 
-    <div class="col-6">
-      <div class="card">
-        <div class="card-header d-flex align-items-center justify-content-between">
-          Robots
+          <div class="col-12 px-0 py-1">
+            <h6 class="m-0">
+              Captain:
+            </h6>
+          </div>
 
-          <button class="btn btn-sm btn-outline-info">Add</button>
+          <div class="col-12 px-0 py-1">
+            <h6 class="m-0">
+              Institution:
+            </h6>
+          </div>
         </div>
-
-        <div class="card-body"></div>
       </div>
     </div>
   </div>
 </div>
+
+<ng-template>
+  <div class="d-flex col-12 p-0 flex-wrap flex-justify-content-center align-items-center">
+
+    <div class="col-8 p-0 py-2">
+      <div class="py-2">
+        <label>Name:</label>
+        <input type="text" class="form-control" [(ngModel)]="team.name">
+      </div>
+
+      <div class="py-2">
+        <label>Slogan:</label>
+        <input type="text" class="form-control" [(ngModel)]="team.slug">
+      </div>
+
+      <div class="py-2">
+        <label>Institution:</label>
+        <input type="text" class="form-control" [(ngModel)]="team.institution">
+      </div>
+    </div>
+
+    <div class="col-4">
+      <img src="" alt="">
+    </div>
+
+    <div class="col-12 p-0">
+      <label>Website:</label>
+      <input type="text" class="form-control" [(ngModel)]="team.website">
+    </div>
+  </div>
+</ng-template>
