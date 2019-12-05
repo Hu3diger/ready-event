@@ -1,57 +1,60 @@
-<div class="container" style="height: calc(100vh - 56px);">
-  <div class="row d-flex flex-wrap align-items-center align-content-center" style="height: 100%;">
+<div
+  style="background-image: url('../../../assets/images/robot_fight.png'); background-repeat: no-repeat; background-size: cover;">
+  <div class="container d-flex flex-wrap align-items-center" style="height: calc(100vh - 56px);">
+    <div class="d-flex flex-wrap align-items-center align-content-center col-12 h-75">
+      <div class="card bg-transparent col-12 p-0 h-100">
+        <div class="card-header bg-info text-light h4">Team management</div>
 
+        <div class="card-body bg-white-fade d-flex flex-wrap align-items-center">
+          <div class="d-flex flex-wrap justify-content-end col-12">
+            <div class="col-12 d-flex flex-wrap justify-content-end py-2">
+              <button *ngIf="selectedTeam" class="btn btn-danger mr-1"  (click)="deleteSelected()">
+                Delete
+              </button>
 
-    <ul class="list-group col-8 h-50">
-      <li class="d-flex list-group-item list-group-item-action">ID: Name</li>
-      <li class="d-flex list-group-item list-group-item-action">ID: Name</li>
-      <li class="d-flex list-group-item list-group-item-action">ID: Name</li>
-      <li class="d-flex list-group-item list-group-item-action">ID: Name</li>
-      <li class="d-flex list-group-item list-group-item-action">ID: Name</li>
-      <li class="d-flex list-group-item list-group-item-action">ID: Name</li>
-      <li class="d-flex list-group-item list-group-item-action">ID: Name</li>
-      <li class="d-flex list-group-item list-group-item-action">ID: Name</li>
-      <li class="d-flex list-group-item list-group-item-action">ID: Name</li>
-      <li class="d-flex list-group-item list-group-item-action">ID: Name</li>
-      <li class="d-flex list-group-item list-group-item-action">ID: Name</li>
-      <li class="d-flex list-group-item list-group-item-action">ID: Name</li>
-      <li class="d-flex list-group-item list-group-item-action">ID: Name</li>
-      <li class="d-flex list-group-item list-group-item-action">ID: Name</li>
-      <li class="d-flex list-group-item list-group-item-action">ID: Name</li>
-      <li class="d-flex list-group-item list-group-item-action">ID: Name</li>
-      <li class="d-flex list-group-item list-group-item-action">ID: Name</li>
-      <li class="d-flex list-group-item list-group-item-action">ID: Name</li>
-      <li class="d-flex list-group-item list-group-item-action">ID: Name</li>
-      <li class="d-flex list-group-item list-group-item-action">ID: Name</li>
-    </ul>
+              <button class="btn btn-success ml-1" (click)="openVerticallyCentered(content)">
+                New
+              </button>
+            </div>
 
-    <div class="col-4 h-50">
-      <div class="card h-100">
-        <div class="card-header d-flex align-items-center justify-content-between">
-          <h5 class="m-0">
-            ID: Team Name
-          </h5>
+            <ul class="list-group col-7 hs-75">
+              <li *ngFor="let item of teams"
+                class="d-flex list-group-item {{ selectedTeam == item ? 'active' : ''}} list-group-item-action"
+                (click)="teamSelected(item)">
+                <p class="h6 m-0 mr-5">{{item.id}}</p>
+                <p class="h6 m-0 ml-5"> {{item.name}}</p>
+              </li>
+            </ul>
 
-          <a href="https://www.google.com">Website</a>
-        </div>
+            <div class="col-5 hs-75">
+              <div class="card h-100">
+                <div class="card-header d-flex align-items-center justify-content-between">
+                  <p class="h5 m-0">ID: {{selectedTeam ? selectedTeam.name : ''}}</p>
 
-        <div class="card-body">
-          <div class="col-12 px-0 py-1">
-            <h6 class="m-0">
-              Slug:
-            </h6>
-          </div>
+                  <a href="{{selectedTeam ? selectedTeam.website : ''}}">Website</a>
+                </div>
 
-          <div class="col-12 px-0 py-1">
-            <h6 class="m-0">
-              Captain:
-            </h6>
-          </div>
+                <div class="card-body">
+                  <div class="col-12 px-0 py-1">
+                    <h6 class="d-flex flex-wrap align-items-center m-0">
+                      <p class="h5 m-0 mr-2">Slug:</p> {{selectedTeam ? selectedTeam.slug : ''}}
+                    </h6>
+                  </div>
 
-          <div class="col-12 px-0 py-1">
-            <h6 class="m-0">
-              Institution:
-            </h6>
+                  <div class="col-12 px-0 py-1">
+                    <h6 class="d-flex flex-wrap align-items-center m-0">
+                      <p class="h5 m-0 mr-2">Captain:</p> {{selectedTeam ? selectedTeam.captain.username : ''}}
+                    </h6>
+                  </div>
+
+                  <div class="col-12 px-0 py-1">
+                    <h6 class="d-flex flex-wrap align-items-center m-0">
+                      <p class="h5 m-0 mr-2">Institution:</p> {{selectedTeam ? selectedTeam.institution : ''}}
+                    </h6>
+                  </div>
+                </div>
+              </div>
+            </div>
           </div>
         </div>
       </div>
@@ -59,33 +62,52 @@
   </div>
 </div>
 
-<ng-template>
-  <div class="d-flex col-12 p-0 flex-wrap flex-justify-content-center align-items-center">
+<ng-template #content let-modal>
+  <div class="modal-header">
+    <h4 class="modal-title">Modal title</h4>
+    <button type="button" class="close" aria-label="Close" (click)="modal.dismiss('Cross click')">
+      <span aria-hidden="true">&times;</span>
+    </button>
+  </div>
 
-    <div class="col-8 p-0 py-2">
-      <div class="py-2">
-        <label>Name:</label>
+  <div class="modal-body">
+    <div class="col-7 p-0 py-2">
+      <div class="col-12 d-inline-flex align-items-center py-2">
+        <label class="pr-3">Name:</label>
         <input type="text" class="form-control" [(ngModel)]="team.name">
       </div>
 
-      <div class="py-2">
-        <label>Slogan:</label>
+      <div class="col-12 d-inline-flex align-items-center py-2">
+        <label class="pr-3">Slogan:</label>
         <input type="text" class="form-control" [(ngModel)]="team.slug">
       </div>
 
-      <div class="py-2">
-        <label>Institution:</label>
+      <div class="col-12 d-inline-flex align-items-center py-2">
+        <label class="pr-3">Institution:</label>
         <input type="text" class="form-control" [(ngModel)]="team.institution">
       </div>
     </div>
 
-    <div class="col-4">
-      <img src="" alt="">
-    </div>
-
-    <div class="col-12 p-0">
-      <label>Website:</label>
+    <div class="col-12 d-inline-flex align-items-center">
+      <label class="pr-3">Website:</label>
       <input type="text" class="form-control" [(ngModel)]="team.website">
     </div>
   </div>
+
+  <div class="modal-footer">
+    <button type="button" class="btn btn-light" (click)="modal.close()">Close</button>
+    <button type="button" class="btn btn-outline-success" (click)="save(); modal.close();">Save</button>
+  </div>
 </ng-template>
+
+<!-- <div>
+  <button class="btn btn-sm btn-outline-info" (click)="findAll()">Find all</button>
+  <input type="number" [(ngModel)]="id">
+  <button class="btn btn-sm btn-outline-info" (click)="findById()">Find by id</button><br><br><br>
+
+  <input type="text" [(ngModel)]="name">
+  <button class="btn btn-sm btn-outline-info" (click)="findByNameMatch()">Find by name match</button><br><br><br>
+  <button class="btn btn-sm btn-outline-info" (click)="findByNameEquals()">Find by name equals</button><br><br><br>
+
+  <p>{{ result }}</p>
+</div> -->

@@ -2,6 +2,7 @@ import { ApolloModule } from 'apollo-angular';
 import { HttpLinkModule } from 'apollo-angular-link-http';
 import { HttpClientModule } from '@angular/common/http';
 import { AppRoutingModule } from "./app.routing";
+import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { BrowserModule } from "@angular/platform-browser";
 import { FormsModule } from "@angular/forms";
 import { NgModule } from "@angular/core";
@@ -42,6 +43,7 @@ import { GraphQLModule } from './GraphQl.module';
     ApolloModule,
     HttpLinkModule,
     HttpClientModule,
+    NgbModule,
     BrowserAnimationsModule,
     ToastrModule.forRoot({
       positionClass: 'toast-bottom-right',
@@ -55,4 +57,4 @@ import { GraphQLModule } from './GraphQl.module';
   ],
   bootstrap: [AppComponent]
 })
-export class AppModule {}
+export class AppModule { }

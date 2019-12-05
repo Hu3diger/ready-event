@@ -25,10 +25,16 @@ export function provideApollo(httpLink: HttpLink) {
 
   const link = ApolloLink.from([basic, auth, httpLink.create({ uri })]);
   const cache = new InMemoryCache();
+  const options = {
+    watchQuery: {
+      errorPolicy: 'all'
+    }
+  }
 
   return {
     link,
-    cache
+    cache,
+    options
   }
 }
 
