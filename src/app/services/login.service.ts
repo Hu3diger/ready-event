@@ -2,13 +2,11 @@ import { Injectable } from "@angular/core";
 import { User } from '../model/User';
 import gql from 'graphql-tag';
 import { Apollo } from 'apollo-angular';
-import { ToastrService } from 'ngx-toastr';
 
 @Injectable()
 export class LoginService {
 	constructor(
 		private apollo: Apollo,
-		private toastr: ToastrService
 	) { }
 
 	login(username: String, passwd: String) {
