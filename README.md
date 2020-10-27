@@ -1,5 +1,21 @@
-# ReadyEvent
+# Ready Event
 
-## Development server
+This project was developed for fun.
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
+## Porpouse
+
+The main goal of this project is to control online and physical events.
+
+## Used Technologies
+
+- Angular 8
+- Bootstrap
+- Apollo
+- GraphQL
+- SCSS
+
+## Running the project
+
+- Fork this project.
+- Run `npm i`. 
+- And then, run `ng serve`

@@ -31,7 +31,7 @@
                 <div class="card-header d-flex align-items-center justify-content-between">
                   <p class="h5 m-0">ID: {{selectedTeam ? selectedTeam.name : ''}}</p>
 
-                  <a href="{{selectedTeam ? selectedTeam.website : ''}}">Website</a>
+                  <a target="_blank" href="{{selectedTeam ? 'http://' + selectedTeam.website : ''}}">Website</a>
                 </div>
 
                 <div class="card-body">
